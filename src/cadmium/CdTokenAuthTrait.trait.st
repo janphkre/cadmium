@@ -9,7 +9,7 @@ CdTokenAuthTrait >> authorize: aRequest [
 		check: aRequest)
 	] on: Exception 
  do: [ :exception |
-	exception debug.
+	exception inspect.
 	false ]) ifFalse: [ CdUnauthorizedError signal ].
 ]
 
