@@ -6,9 +6,9 @@ potential security flaw when creating new resources.
 "
 Trait {
 	#name : #CdWildcardAuthTrait,
-	#category : #cadmium
+	#category : #'cadmium-auth'
 }
 
-{ #category : #accessing }
+{ #category : #public }
 CdWildcardAuthTrait >> authorize: request [
 ]

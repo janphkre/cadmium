@@ -4,10 +4,10 @@ This means that I reject any incoming request.
 "
 Trait {
 	#name : #CdRejectingAuthTrait,
-	#category : #cadmium
+	#category : #'cadmium-auth'
 }
 
-{ #category : #accessing }
+{ #category : #public }
 CdRejectingAuthTrait >> authorize: request [
 	CdUnauthorizedError signal.
 ]

@@ -1,10 +1,7 @@
 Class {
 	#name : #CdUnauthorizedError,
 	#superclass : #Error,
-	#classVars : [
-		'znResponse'
-	],
-	#category : #cadmium
+	#category : #'cadmium-auth'
 }
 
 { #category : #converting }
