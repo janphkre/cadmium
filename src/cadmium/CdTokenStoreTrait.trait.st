@@ -5,5 +5,5 @@ Trait {
 
 { #category : #acccessing }
 CdTokenStoreTrait classSide >> tokenDelegate [
-	^ TokenStore default.
+	^ CdTokenStore default.
 ]

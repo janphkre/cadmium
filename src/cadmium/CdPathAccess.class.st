@@ -1,6 +1,6 @@
 Class {
-	#name : #PathAccess,
-	#superclass : #NoAccess,
+	#name : #CdPathAccess,
+	#superclass : #CdAccess,
 	#instVars : [
 		'callSegments'
 	],
@@ -8,23 +8,23 @@ Class {
 }
 
 { #category : #'instance creation' }
-PathAccess class >> for: aCollection [
+CdPathAccess class >> on: aCollection [
 	^ (self new) callSegments: aCollection;
 		yourself.
 ]
 
 { #category : #accessing }
-PathAccess >> callSegments [
+CdPathAccess >> callSegments [
 	^ callSegments
 ]
 
 { #category : #accessing }
-PathAccess >> callSegments: aCollection [
+CdPathAccess >> callSegments: aCollection [
 	callSegments := aCollection
 ]
 
 { #category : #testing }
-PathAccess >> canAccess: request [
+CdPathAccess >> canAccess: request [
 	| requestPath |
 	requestPath := request uri segments.
 	(requestPath size = callSegments size)
@@ -36,4 +36,11 @@ PathAccess >> canAccess: request [
 					ifFalse: [ ^ false ] ]
 			].
 	^ true.
+]
+
+{ #category : #accessing }
+CdPathAccess >> to: aDictionary [
+	super to: aDictionary.
+	aDictionary at: 'path' put: callSegments.
+	^ aDictionary
 ]

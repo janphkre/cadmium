@@ -1,5 +1,5 @@
 Class {
-	#name : #TokenStore,
+	#name : #CdTokenStore,
 	#superclass : #Object,
 	#instVars : [
 		'dictionary',
@@ -12,29 +12,34 @@ Class {
 }
 
 { #category : #accessing }
-TokenStore class >> default [
+CdTokenStore class >> default [
 	defaultInstance ifNil: [ 
 		defaultInstance := self new. ].
 	^ defaultInstance
 ]
 
 { #category : #public }
-TokenStore >> clearPermissions [
+CdTokenStore >> clearPermissions [
 	self initialize.
 ]
 
 { #category : #public }
-TokenStore >> for: token grant: permissions [
+CdTokenStore >> for: token grant: permissions [
 	dictionary at: token put: permissions
 ]
 
 { #category : #'private-initialization' }
-TokenStore >> initialize [
+CdTokenStore >> initialize [
 	dictionary := Dictionary new.
 ]
 
+{ #category : #accessing }
+CdTokenStore >> permissions [
+	^ dictionary
+]
+
 { #category : #public }
-TokenStore >> permissionsFor: anIdentifier check: request [
+CdTokenStore >> permissionsFor: anIdentifier check: request [
 	^ (dictionary at: anIdentifier ifAbsent: [ ^ false ])
 		detect: [ :constraint | constraint canAccess: request ]
 		ifFound: [ true ]

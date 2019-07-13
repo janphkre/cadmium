@@ -1,6 +1,6 @@
 Class {
-	#name : #PathMethodAccess,
-	#superclass : #PathAccess,
+	#name : #CdPathMethodAccess,
+	#superclass : #CdPathAccess,
 	#instVars : [
 		'callMethod'
 	],
@@ -8,24 +8,31 @@ Class {
 }
 
 { #category : #'instance creation' }
-PathMethodAccess class >> for: method on: pathSegments [
+CdPathMethodAccess class >> for: method on: pathSegments [
 	^ (self new) callMethod: method;
 		callSegments: pathSegments;
 		yourself.
 ]
 
 { #category : #accessing }
-PathMethodAccess >> callMethod [
+CdPathMethodAccess >> callMethod [
 	^ callMethod
 ]
 
 { #category : #accessing }
-PathMethodAccess >> callMethod: aString [
+CdPathMethodAccess >> callMethod: aString [
 	callMethod := aString.
 ]
 
 { #category : #testing }
-PathMethodAccess >> canAccess: request [
+CdPathMethodAccess >> canAccess: request [
 	^ (request method = callMethod) ifFalse: [ false ]
 	ifTrue: [ super canAccess: request ].
+]
+
+{ #category : #testing }
+CdPathMethodAccess >> to: aDictionary [
+	super to: aDictionary.
+	aDictionary at: 'method' put: callMethod.
+	^ aDictionary.
 ]
