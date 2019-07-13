@@ -8,6 +8,6 @@ Trait {
 }
 
 { #category : #public }
-CdRejectingAuthTrait >> authorize: request [
+CdRejectingAuthTrait >> authorize: aRequest [
 	CdUnauthorizedError signal.
 ]

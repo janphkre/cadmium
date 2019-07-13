@@ -10,5 +10,5 @@ Trait {
 }
 
 { #category : #public }
-CdWildcardAuthTrait >> authorize: request [
+CdWildcardAuthTrait >> authorize: aRequest [
 ]

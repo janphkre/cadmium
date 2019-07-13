@@ -3,8 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'dictionary',
-		'defaultPermissions',
-		'defaultPermssions'
+		'defaultPermissions'
 	],
 	#classInstVars : [
 		'defaultInstance'
@@ -19,11 +18,14 @@ TokenStore class >> default [
 	^ defaultInstance
 ]
 
-{ #category : #accessing }
-TokenStore >> defaultPermissions [
-	defaultPermissions ifNil: [ 
-		defaultPermssions := TokenPermissions new. ].
-	^ defaultPermissions
+{ #category : #public }
+TokenStore >> clearPermissions [
+	self initialize.
+]
+
+{ #category : #public }
+TokenStore >> for: token grant: permissions [
+	dictionary at: token put: permissions
 ]
 
 { #category : #'private-initialization' }
@@ -32,6 +34,9 @@ TokenStore >> initialize [
 ]
 
 { #category : #public }
-TokenStore >> permissionsFor: anIdentifier [
-	^ dictionary at: anIdentifier ifAbsent: [ self defaultPermissions ].
+TokenStore >> permissionsFor: anIdentifier check: request [
+	^ (dictionary at: anIdentifier ifAbsent: [ ^ false ])
+		detect: [ :constraint | constraint canAccess: request ]
+		ifFound: [ true ]
+		ifNone: [ false ]
 ]
