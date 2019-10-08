@@ -16,7 +16,7 @@ BaselineOfCadmium >> baseline: spec [
 							loads: #('REST');
 							repository: 'github://zweidenker/zinc/repository' ].
 			
-			spec package: 'Cadmium' with:[spec requires: #('ZincHTTPComponents' 'OpenAPI-Core')].
+			spec package: 'Cadmium' with:[spec requires: #('ZincHTTPComponents')].
 
 			spec
 				group: 'core' with: #('Cadmium');
