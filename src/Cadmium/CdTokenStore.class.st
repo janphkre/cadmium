@@ -8,7 +8,7 @@ Class {
 	#classInstVars : [
 		'defaultInstance'
 	],
-	#category : #'cadmium-token'
+	#category : #'Cadmium-token'
 }
 
 { #category : #accessing }

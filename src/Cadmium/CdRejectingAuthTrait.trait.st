@@ -4,7 +4,7 @@ This means that I reject any incoming request.
 "
 Trait {
 	#name : #CdRejectingAuthTrait,
-	#category : #'cadmium-auth'
+	#category : #'Cadmium-auth'
 }
 
 { #category : #public }

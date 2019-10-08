@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'callMethod'
 	],
-	#category : #'cadmium-token'
+	#category : #'Cadmium-token'
 }
 
 { #category : #'instance creation' }

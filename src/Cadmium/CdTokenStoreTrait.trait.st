@@ -1,6 +1,6 @@
 Trait {
 	#name : #CdTokenStoreTrait,
-	#category : #'cadmium-token'
+	#category : #'Cadmium-token'
 }
 
 { #category : #acccessing }

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'callSegments'
 	],
-	#category : #'cadmium-token'
+	#category : #'Cadmium-token'
 }
 
 { #category : #'instance creation' }

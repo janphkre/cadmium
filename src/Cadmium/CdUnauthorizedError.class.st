@@ -1,7 +1,7 @@
 Class {
 	#name : #CdUnauthorizedError,
 	#superclass : #Error,
-	#category : #'cadmium-auth'
+	#category : #'Cadmium-auth'
 }
 
 { #category : #converting }

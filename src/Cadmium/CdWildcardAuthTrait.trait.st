@@ -6,7 +6,7 @@ potential security flaw when creating new resources.
 "
 Trait {
 	#name : #CdWildcardAuthTrait,
-	#category : #'cadmium-auth'
+	#category : #'Cadmium-auth'
 }
 
 { #category : #public }

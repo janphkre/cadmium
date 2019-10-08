@@ -1,6 +1,6 @@
 Trait {
 	#name : #CdTokenAuthTrait,
-	#category : #'cadmium-auth'
+	#category : #'Cadmium-auth'
 }
 
 { #category : #public }

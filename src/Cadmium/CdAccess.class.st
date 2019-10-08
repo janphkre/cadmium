@@ -1,7 +1,7 @@
 Class {
 	#name : #CdAccess,
 	#superclass : #Object,
-	#category : #'cadmium-token'
+	#category : #'Cadmium-token'
 }
 
 { #category : #'instance creation' }
